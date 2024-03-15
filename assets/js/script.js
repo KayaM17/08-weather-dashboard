@@ -14,7 +14,7 @@
 
 
 $(document).ready(function () {
-    // Search history buttons clickable.
+    // Search history buttons.
     $("#history").on("click", ".history-btns", function () {
         var searchValue = $(this).text();
         getWeather(searchValue);
@@ -26,7 +26,7 @@ $(document).ready(function () {
         var searchValue = $("#search-input").val().trim();
         // Early return if searchValue is empty
         if (searchValue === "") {
-            // Error message in search box and replace placeholder momentarily for 5 seconds
+            // Error message in search box it will replace placeholder for 5 seconds
             $("#search-input").attr("placeholder", "Please enter a valid city.");
             setTimeout(function () {
                 $("#search-input").attr("placeholder", "Search for a city...");
@@ -39,7 +39,7 @@ $(document).ready(function () {
         }).join(" ");
         // Fetch weather
         getWeather(searchValue);        
-        // Search history saved to local storage.
+        // Search history saved to local storage in console
         var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
         searchHistory.push(searchValue);
         
@@ -63,10 +63,10 @@ $(document).ready(function () {
             $("#history").append(htmlHist);
         });
     } 
-// Displat history 
+// Displat history search
     updateHistoryDisplay();  
 });
-// WEATHER API
+// WEATHER API:
 var apiKey = "bff363b19166c862e56389c5d311a2c6"
 function getWeather(searchValue) {
     var queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&appid=${apiKey}&units=metric`;
@@ -99,7 +99,7 @@ function getFiveDays(lat, lon) {
             return response.json();
         })
         .then(function (data) {    
-            // 5 day forecast
+            // 5 day forecast display
             $("#forecast").html("");        
             for (let i = 0; i < data.list.length; i+=8) {
                 let element = data.list[i];

@@ -40,7 +40,6 @@ The following image shows the web application's appearance and functionality:
 ![alt text](<assets/images/weather-dashbord  screenshot.png>)
 
 
-[text](assets/images/Weather-dashboard-screenrecording.mov)
 
 ## References
 
