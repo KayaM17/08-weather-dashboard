@@ -63,4 +63,4 @@ Licensed under the MIT License
 
 GitHub Repository URL: https://github.com/KayaM17/08-weather-dashboard
 
-Deployed Web Application URL: 
+Deployed Web Application URL: https://kayam17.github.io/08-weather-dashboard/
